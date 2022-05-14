@@ -123,20 +123,26 @@
       <h1 class="headings"><span>Categorie</span></h1>
       <div class="container">
         <div class="row">
-            @foreach($categories as $category)
-            <div class="col-3 text-center">
-                <div class="card border-0 bg-light mb-4">
-                    <div class="card-body">
-                        <img src="{{ URL::asset('image/banier/'. $category->id .'.jpg') }}" class="img-fluid" alt="">
-                        <div class="content">
-                            <h3>{{ $category->name }}</h3>
-                            <p>{{ $category->description }}</p>
-                            <a href="#" class="recu-btn">voir tous</a>
+            @if(sizeof($categories) > 0)
+                @foreach($categories as $category)
+                <div class="col-3 text-center">
+                    <div class="card border-0 bg-light mb-4">
+                        <div class="card-body">
+                            <img src="{{ URL::asset('image/banier/'. $category->id .'.jpg') }}" class="img-fluid" alt="">
+                            <div class="content">
+                                <h3>{{ $category->name }}</h3>
+                                <p>{{ $category->description }}</p>
+                                <a href="#" class="recu-btn">voir tous</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            @endforeach
+                @endforeach
+            @else
+                <div class="col-12 text-center">
+                    No categories to show for this moment
+                </div>
+            @endif
         </div>
       </div>
    </section>
@@ -145,93 +151,40 @@
       <h1 class="headings"><span>Produits</span></h1>
       <div class="container">
             <div class="row">
-               <div class="col-3 mb-4">
-                  <div class="card">
-                        <div class="card-header">
-                           <span class="price">Ar 200.000</span>
-                           <img src="{{ URL::asset('image/produit/1.jpg') }}" class="img-fluid" alt="">
-                        </div>
-                        <div class="card-body text-center">
+                @if (sizeof($products) > 0)
+                    @foreach ( $products as $product )
+                    <div class="col-3 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                            <span class="price">Ar {{ $product->price }}</span>
+                            <img src="{{ URL::asset('image/produit/'. $product->id .'.jpg') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="card-body text-center">
 
-                           <h3 class="">Nom Produits</h3>
-                           <div class="stars text-center">
-                              <i class="fas fa-star st"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="far fa-star"></i>
-                           </div>
-                           <a href="#" class=" recu-btn">Acheter</a>
+                            <h3 class="">{{ $product->name }}</h3>
+                            <div class="stars text-center">
+                                <i class="fas fa-star st"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <a href="#" class=" recu-btn">Acheter</a>
+                            </div>
                         </div>
-                  </div>
-               </div>
-               <div class="col-3 mb-4">
-                  <div class="card">
-                        <div class="card-header">
-                           <span class="price">Ar 200.000</span>
-                           <img src="{{ URL::asset('image/produit/2.jpg') }}" class="img-fluid" alt="">
-                        </div>
-                        <div class="card-body text-center">
-
-                           <h3 class="">Nom Produits</h3>
-                           <div class="stars text-center">
-                              <i class="fas fa-star st"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="far fa-star"></i>
-                           </div>
-                           <a href="#" class=" recu-btn">Acheter</a>
-                        </div>
-                  </div>
-               </div>
-
-               <div class="col-3 mb-4">
-                  <div class="card">
-                        <div class="card-header">
-                           <span class="price">Ar 200.000</span>
-                           <img src="{{ URL::asset('image/produit/3.jpg') }}" class="img-fluid" alt="">
-                        </div>
-                        <div class="card-body text-center">
-
-                           <h3 class="">Nom Produits</h3>
-                           <div class="stars text-center">
-                              <i class="fas fa-star st"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="far fa-star"></i>
-                           </div>
-                           <a href="#" class=" recu-btn">Acheter</a>
-                        </div>
-                  </div>
-               </div>
-               <div class="col-3 mb-4">
-                  <div class="card">
-                        <div class="card-header">
-                           <span class="price">Ar 200.000</span>
-                           <img src="{{ URL::asset('image/produit/4.jpg') }}" class="img-fluid" alt="">
-                        </div>
-                        <div class="card-body text-center">
-
-                           <h3 class="">Nom Produits</h3>
-                           <div class="stars text-center">
-                              <i class="fas fa-star st"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="far fa-star"></i>
-                           </div>
-                           <a href="#" class=" recu-btn">Acheter</a>
-                        </div>
-                  </div>
-               </div>
+                    </div>
+                    @endforeach
+                @else
+                    <div class="col-12 text-center">
+                        No products to show for this moment
+                    </div>
+                @endif
             </div>
       </div>
    </section>
 
    <section class="continer-fluid bg-light p-3" id="gallery">
-      <h1 class="headings"><span>Portofolio</span></h1>
+      <h1 class="headings"><span>Gallerie</span></h1>
       <div class="container">
             <div class="row">
                <div class="col-lg-12">
@@ -290,7 +243,7 @@
    </section>
 
    <section class="contacts mb-4" id="contact">
-      <h1 class="headings"><span>Contats</span></h1>
+      <h1 class="headings"><span>Contacts</span></h1>
       <div class="container">
             <div class="row">
                <div class="imgCont">
