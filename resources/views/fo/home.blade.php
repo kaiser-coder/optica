@@ -122,64 +122,22 @@
    <section class="categorie mt-4 mb-4" id="categorie">
       <h1 class="headings"><span>Categorie</span></h1>
       <div class="container">
-            <div class="row">
-               <div class="col-3 text-center">
-                  <div class="card border-0 bg-light mb-4">
-                        <div class="card-body">
-                           <img src="{{ URL::asset('image/banier/2.jpg') }}" class="img-fluid" alt="">
-                           <div class="content">
-                              <h3>Nom categorie</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                              <a href="#" class="recu-btn">voir tous</a>
-                           </div>
+        <div class="row">
+            @foreach($categories as $category)
+            <div class="col-3 text-center">
+                <div class="card border-0 bg-light mb-4">
+                    <div class="card-body">
+                        <img src="{{ URL::asset('image/banier/'. $category->id .'.jpg') }}" class="img-fluid" alt="">
+                        <div class="content">
+                            <h3>{{ $category->name }}</h3>
+                            <p>{{ $category->description }}</p>
+                            <a href="#" class="recu-btn">voir tous</a>
                         </div>
-                  </div>
-
-
-               </div>
-               <div class="col-3 text-center">
-                  <div class="card border-0 bg-light mb-4">
-                        <div class="card-body">
-                           <img src="{{ URL::asset('image/banier/3.jpg') }}" class=" img-fluid" alt="">
-                           <div class="content">
-                              <h3>Nom categorie</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                              <a href="#" class="recu-btn">voir tous</a>
-                           </div>
-                        </div>
-                  </div>
-
-
-               </div>
-               <div class="col-3 text-center">
-                  <div class="card border-0 bg-light mb-4">
-                        <div class="card-body">
-                           <img src="{{ URL::asset('image/banier/4.jpg') }}" class="img-fluid" alt="">
-                           <div class="content">
-                              <h3>Nom categorie</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                              <a href="#" class="recu-btn">voir tous</a>
-                           </div>
-                        </div>
-                  </div>
-
-
-               </div>
-               <div class="col-3 text-center">
-                  <div class="card border-0 bg-light mb-4">
-                        <div class="card-body">
-                           <img src="{{ URL::asset('image/banier/5.jpg') }}" class="img-fluid" alt="">
-                           <div class="content">
-                              <h3>Nom categorie</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                              <a href="#" class="recu-btn">voir tous</a>
-                           </div>
-                        </div>
-                  </div>
-
-
-               </div>
+                    </div>
+                </div>
             </div>
+            @endforeach
+        </div>
       </div>
    </section>
 
@@ -201,7 +159,7 @@
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
-                              <i class="far fa-star"></i>image/produit/3.jpgimage/produit/3.jpg
+                              <i class="far fa-star"></i>
                            </div>
                            <a href="#" class=" recu-btn">Acheter</a>
                         </div>
