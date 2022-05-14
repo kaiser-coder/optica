@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "font-1";
+  src: url(./Poppins-SemiBold.ttf);
+}
+@font-face {
+  font-family: "font-2";
+  src: url(./Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "font-3";
+  src: url(./Poppins-Medium.ttf);
+}
+
+/* style global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: "font-3";
+}
+
+/* style navigation */
+.navigation {
+  position: fixed;
+  width: 250px;
+  left: 0px;
+  background: #1b1b1b !important;
+  height: 100%;
+}
+.navigation.actif {
+  left: -250px;
+  transition: 1s;
+}
+.navigation .logo {
+  color: #fff !important;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: center;
+  background: #1e1e1e !important;
+  letter-spacing: 1px;
+}
+.navigation ul {
+  background: #1b1b1b !important;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+.navigation ul li {
+  line-height: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.navigation ul li a {
+  position: relative;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff !important;
+  padding-left: 40px;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+
+.navigation ul li.active a {
+  color: cyan !important;
+  background: #1e1e1e !important;
+  border-left-color: cyan !important;
+}
+
+/* sous menu */
+.navigation ul ul {
+  position: static;
+  display: none;
+}
+
+.navigation ul .prod-show.show {
+  display: block;
+}
+.navigation ul .aprov-show.show1 {
+  display: block;
+}
+.navigation ul ul li {
+  line-height: 42px;
+  border-bottom: none;
+}
+.navigation ul ul li a {
+  font-size: 15px;
+  color: #e6e6e6 !important;
+  padding-left: 80px;
+}
+.navigation ul li.active ul li a {
+  color: #e6e6e6 !important;
+  background: #1b1b1b !important;
+  border-left-color: transparent !important;
+}
+.navigation ul li ul li a:hover {
+  color: cyan !important;
+  background: #1e1e1e !important;
+}
+.navigation ul li a .fa-caret-down {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+.navigation ul li a .fa-caret-down.rotate {
+  transform: translateY(-50%) rotate(-180deg);
+}
+/* header et main */
+.main {
+  position: absolute;
+  width: calc(100% - 250px);
+  left: 250px;
+  min-height: 100vh;
+  background-color: #e6e6e6 !important;
+  transition: 0.4s;
+}
+.main.actif {
+  width: calc(100% - 0px);
+  left: 0;
+  transition: 1s;
+}
+.main .topbar {
+  width: 100%;
+  height: 60px;
+  background: #f8f8f8 !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  width: 60px;
+  height: 60px;
+  color: #1b1b1b !important;
+  line-height: 60px;
+}
+.toggle .fa-bars {
+  color: #1b1b1b;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+.search label {
+  position: relative;
+  width: 100%;
+}
+.search label input {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  outline: none;
+  padding: 5px 20px;
+  padding-left: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.search label .serc {
+  position: absolute;
+  left: 14px;
+  top: 12px;
+}
+
+/* acceuil admin */
+.carBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+.carBox .car {
+  position: relative;
+  background-color: #fff !important;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.carBox .car .number {
+  font-size: 2em;
+  position: relative;
+  font-weight: 500;
+}
+.carBox .car .cardName {
+  color: #999 !important;
+}
+.carBox .car .iconBox {
+  font-size: 2.5em;
+  color: cyan !important;
+}
+
+/* produit */
+.produits label {
+  color: #999 !important;
+}
+/* fournisseur */
+/* .frns {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+} */
