@@ -236,8 +236,6 @@
 
                   </div>
                </div>
-
-
             </div>
       </div>
    </section>
@@ -252,13 +250,19 @@
 
                <div class="form">
                   <h3 class="text-center">Contactez-nous</h3>
-                  <form action="" method="POST" class="form-box">
+                  <form action="{!! url('/contacts') !!}" method="POST" class="form-box">
+                    @csrf
 
-                        <input type="text" name="nom" class="form-control" placeholder="nom">
-                        <input type="email" name="email" class="form-control" placeholder="email@gmail.com">
+                    <input type="text" name="name" class="form-control" placeholder="nom">
+                    <span class="help-text text-danger">{{ $errors->first('name') }}</span>
 
-                        <textarea name="mes" cols="30" rows="10" class="form-control" placeholder="Votre message"></textarea>
-                        <button type="submit" class="btn btn-success btn-lg form-control">Envoyer</button>
+                    <input type="email" name="email" class="form-control" placeholder="email@gmail.com">
+                    <span class="help-text text-danger">{{ $errors->first('email') }}</span>
+
+                    <textarea name="message" cols="30" rows="10" class="form-control" placeholder="Votre message"></textarea>
+                    <span class="help-text text-danger">{{ $errors->first('message') }}</span>
+
+                    <button type="submit" class="btn btn-success btn-lg form-control">Envoyer</button>
                   </form>
                </div>
 

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\front\PagesController;
 use App\Http\Controllers\back\ProductsController;
+use App\Http\Controllers\back\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,4 @@ use App\Http\Controllers\back\ProductsController;
 
 Route::get('/home', [PagesController::class, 'index']);
 Route::get('/products', [ProductsController::class, 'index']);
+Route::post('/contacts', [ContactsController::class, 'store']);
