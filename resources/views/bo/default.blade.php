@@ -1,4 +1,5 @@
 {{-- Default layout --}}
+@auth
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,3 +28,4 @@
     <script src="{{ URL::asset('js/admin.js') }}"></script>
 </body>
 </html>
+@endauth
