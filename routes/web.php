@@ -22,4 +22,5 @@ Route::get('/home', [PagesController::class, 'index'])->name('homepage');
 Route::prefix('admin')->group(function() {
     Route::get('/products', [ProductsController::class, 'index'])->name('products.list');
     Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.store');
+    Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts.list');
 });
