@@ -17,10 +17,17 @@ use App\Http\Controllers\back\ContactsController;
 |
 */
 
-Route::get('/home', [PagesController::class, 'index'])->name('homepage');
+Route::get('/', [PagesController::class, 'index'])->name('homepage');
 
 Route::prefix('admin')->group(function() {
-    Route::get('/products', [ProductsController::class, 'index'])->name('products.list');
-    Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.store');
-    Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts.list');
+    Route::prefix('products')->group(function() {
+        Route::get('', [ProductsController::class, 'index'])->name('products.list');
+        Route::get('create', [ProductsController::class, 'create'])->name('products.create');
+        Route::post('', [ProductsController::class, 'store'])->name('products.store');
+    });
+
+    Route::prefix('contacts')->group(function() {
+        Route::post('', [ContactsController::class, 'store'])->name('contacts.store');
+        Route::get('', [ContactsController::class, 'index'])->name('contacts.list');
+    });
 });

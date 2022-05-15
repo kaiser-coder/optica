@@ -6,8 +6,8 @@
         <li class="disable"><a href="#" class="prod-btn">Produits
                 <span class="fas fa-caret-down first"></span> </a>
             <ul class="prod-show">
-                {{-- <li><a href="no-route">Nouveau</a></li> --}}
-                <li><a href="{{ route('products.list') }}">Listes</a></li>
+                <li><a href="{{ route('products.create') }}">Nouveau</a></li>
+                <li><a href="{{ route('products.list') }}">Liste</a></li>
             </ul>
         </li>
 

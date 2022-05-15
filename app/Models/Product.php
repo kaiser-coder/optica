@@ -10,8 +10,13 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
+        'ref',
         'name',
         'description',
-        'price'
+        'price',
+        'category',
+        'made_in',
+        'benchmark',
+        'production_date'
     ];
 }
