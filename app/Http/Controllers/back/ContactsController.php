@@ -10,7 +10,9 @@ class ContactsController extends Controller
 {
     public function index()
     {
-        return view('bo.contacts');
+        return view('bo.contacts', [
+            'contacts' => Contact::get()
+        ]);
     }
 
     public function store(ContactRequest $request)

@@ -11,13 +11,20 @@
                         <tr>
                             <th>Id</th>
                             <th>Nom</th>
-                            <th>Email Adresse</th>
+                            <th>Adresse Email</th>
                             <th>Message</th>
                         </tr>
                     </thead>
 
                     <tbody>
-
+                        @foreach ($contacts as $contact)
+                            <tr>
+                                <th>{{ $contact->id }}</th>
+                                <th>{{ $contact->name }}</th>
+                                <th>{{ $contact->email }}</th>
+                                <th>{{ $contact->message }}</th>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
