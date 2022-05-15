@@ -19,23 +19,23 @@
             <i class="fas fa-shopping-basket lo"></i> optica
       </a>
       <nav class="navbar">
-            <a href="#carouselHome">Acceuil</a>
-            <a href="#categorie">categorie</a>
-            <a href="#produits">Produits</a>
-            <a href="#gallery">gallery</a>
-            <a href="#contact">contacts</a>
+        <a href="#carouselHome">Acceuil</a>
+        <a href="#categorie">categorie</a>
+        <a href="#produits">Produits</a>
+        <a href="#gallery">Gallerie</a>
+        <a href="#contact">contacts</a>
       </nav>
 
       <div class="icons">
-            <div class="icon fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search icon" id="search-btn"></div>
-            <div class="fas fa-shopping-cart icon" id="cart-btn"></div>
-            <div class="fas fa-user icon" id="user-btn"></div>
+        <div class="icon fas fa-bars" id="menu-btn"></div>
+        {{-- <div class="fas fa-search icon" id="search-btn"></div> --}}
+        {{-- <div class="fas fa-shopping-cart icon" id="cart-btn"></div> --}}
+        {{-- <div class="fas fa-user icon" id="user-btn"></div> --}}
       </div>
 
       <form action="" class="search-form">
-            <input type="search" name="" id="search-box" placeholder="Recherche...">
-            <label for="search-box" class="ser fas fa-search"></label>
+        <input type="search" name="" id="search-box" placeholder="Recherche...">
+        <label for="search-box" class="ser fas fa-search"></label>
       </form>
 
       <!-- shoppin-cart -->
@@ -250,7 +250,7 @@
 
                <div class="form">
                   <h3 class="text-center">Contactez-nous</h3>
-                  <form action="{!! url('/contacts') !!}" method="POST" class="form-box">
+                  <form action="{!! route('contacts.store') !!}" method="POST" class="form-box">
                     @csrf
 
                     <input type="text" name="name" class="form-control" placeholder="nom">

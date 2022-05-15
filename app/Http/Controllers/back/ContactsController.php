@@ -11,6 +11,6 @@ class ContactsController extends Controller
     public function store(ContactRequest $request)
     {
         Contact::firstOrCreate($request->except('_token'));
-        return redirect('/home');
+        return redirect()->route('homepage');
     }
 }
