@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\front\PagesController;
 use App\Http\Controllers\back\ProductsController;
 use App\Http\Controllers\back\ContactsController;
+use App\Http\Controllers\back\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,11 @@ Route::prefix('admin')->group(function() {
     Route::prefix('contacts')->group(function() {
         Route::post('', [ContactsController::class, 'store'])->name('contacts.store');
         Route::get('', [ContactsController::class, 'index'])->name('contacts.list');
+    });
+
+    Route::prefix('categories')->group(function() {
+        Route::get('', [CategoriesController::class, 'index'])->name('categories.list');
+        Route::get('create', [CategoriesController::class, 'create'])->name('categories.create');
+        Route::post('', [CategoriesController::class, 'store'])->name('categories.store');
     });
 });

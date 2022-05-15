@@ -10,12 +10,14 @@ class ProductsController extends Controller
 {
     public function index()
     {
-        return '';
+        return view('bo.products-list', [
+            'products' => Product::get()
+        ]);
     }
 
     public function create()
     {
-        return view('bo.products', [
+        return view('bo.products-create', [
             'categories' => ['Category 1', 'Category 2'],
             'benchmarks' => ['Prada', 'Dolce', 'Ray Ban'],
             'countries' => ['France', 'Allemagne', 'Londres']
