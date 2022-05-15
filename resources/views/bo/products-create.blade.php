@@ -41,7 +41,7 @@
                     <select class="form-control" name="category" id="">
                         <option value="">-Aucun-</option>
                         @foreach ($categories as $category)
-                        <option value="{{ $category }}">{{ $category }}</option>
+                        <option value="{{ $category->name }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
                     <span class="text-block text-danger">{{ $errors->first('category') }}</span>

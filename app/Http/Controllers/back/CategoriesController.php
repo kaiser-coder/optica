@@ -3,14 +3,16 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 
 class CategoriesController extends Controller
 {
     public function index()
     {
-        return view('bo.categories-list');
+        return view('bo.categories-list', [
+            'categories' => Category::get()
+        ]);
     }
 
     public function create()

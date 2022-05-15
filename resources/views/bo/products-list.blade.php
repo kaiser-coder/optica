@@ -37,7 +37,9 @@
                                 </tr>
                             @endforeach
                         @else
-                          <p class="text-center">Aucun produit disponible pour le moment</p>
+                          <tr class="text-center">
+                              <th colspan="9">Aucun produit disponible pour le moment</th>
+                          </tr>
                         @endif
                     </tbody>
                 </table>

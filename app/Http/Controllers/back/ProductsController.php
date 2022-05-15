@@ -5,6 +5,7 @@ namespace App\Http\Controllers\back;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductsController extends Controller
 {
@@ -18,7 +19,7 @@ class ProductsController extends Controller
     public function create()
     {
         return view('bo.products-create', [
-            'categories' => ['Category 1', 'Category 2'],
+            'categories' => Category::get(),
             'benchmarks' => ['Prada', 'Dolce', 'Ray Ban'],
             'countries' => ['France', 'Allemagne', 'Londres']
         ]);
